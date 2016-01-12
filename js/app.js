@@ -62,9 +62,9 @@ tableDataEl.appendChild(trEl);
 }
 renderHeaderRow();
 
-var pikePlaceMarket = new CoffeeShop(14, 55, 1.2, 'pikePlaceMarket');
-var capitolHill = new CoffeeShop(14, 55, 1.2, 'capitolHill');
-var seattlePublicLibrary = new CoffeeShop(14, 55, 1.2, 'seattlePublicLibrary');
-var southLakeUnion = new CoffeeShop(14, 55, 1.2, 'southLakeUnion');
-var seaTacAirport = new CoffeeShop(14, 55, 1.2, 'seaTacAirport');
-var websiteSales = new CoffeeShop(14, 55, 1.2, 'websiteSales');
+var pikePlaceMarket = new CoffeeShop(14, 55, 1.2, 'Pike Place Market');
+var capitolHill = new CoffeeShop(14, 55, 1.2, 'Capitol Hill');
+var seattlePublicLibrary = new CoffeeShop(14, 55, 1.2, 'Seattle Public Library');
+var southLakeUnion = new CoffeeShop(14, 55, 1.2, 'South Lake Union');
+var seaTacAirport = new CoffeeShop(14, 55, 1.2, 'Sea-Tac Airport');
+var websiteSales = new CoffeeShop(14, 55, 1.2, 'Website Sales');
