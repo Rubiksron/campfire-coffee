@@ -1,3 +1,20 @@
 body {
   background-color: beige;
 }
+table {
+    border-collapse: separate;
+    border-spacing: 10px 5px;
+    border: 1px solid grey;
+    color: yellow;
+    margin: auto;
+    background-color: orange;
+}
+ th, td {
+   border: 1px solid white;
+   text-align: center;
+   padding: 3px;
+}
+
+tr:nth-child(even) {
+    background-color: red;
+}
