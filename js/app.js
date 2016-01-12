@@ -2,7 +2,7 @@
 var hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00noon', '1:00pm', '2:00pm', '3:00pm', '4:00pm']
 
 var pikePlaceMarket = {
-  perHourArray: [''],
+  perHourArray: [],
   total: 0,
   minCust: 14,
   maxCust: 55,
@@ -25,25 +25,25 @@ var pikePlaceMarket = {
   },
   render: function() {
     this.generateHourly();
-    var ulEl = document.createElement("ul");
-    ulEl.appendChild(document.createTextNode(this.name));
+    var thEl = document.createElement("th");
+    thEl.appendChild(document.createTextNode(this.name));
     var sectionElement = document.getElementById("data");
-    sectionElement.appendChild(ulEl);
+    sectionElement.appendChild(thEl);
     for (var i = 0; i < hours.length; i++) {
-      var liEl = document.createElement("li");
-      liEl.textContent = hours[i] + " : " + this.perHourArray[i];
-      ulEl.appendChild(liEl);
+      var tdEl = document.createElement("td");
+      tdEl.textContent = hours[i] + " : " + this.perHourArray[i];
+      thEl.appendChild(tdEl);
     }
-    var totalCups = document.createElement("li");
+    var totalCups = document.createElement("td");
     totalCups.textContent = "total :"  + this.total;
-    ulEl.appendChild(totalCups);
+    thEl.appendChild(totalCups);
   }
 };
 pikePlaceMarket.render();
 
 
 var capitolHill = {
-  perHourArray: [''],
+  perHourArray: [],
   total: 0,
   minCust: 14,
   maxCust: 55,
@@ -84,7 +84,7 @@ capitolHill.render();
 
 
 var seattlePublicLibrary = {
-  perHourArray: [''],
+  perHourArray: [],
   total: 0,
   minCust: 14,
   maxCust: 55,
@@ -125,7 +125,7 @@ seattlePublicLibrary.render();
 
 
 var southLakeUnion = {
-  perHourArray: [''],
+  perHourArray: [],
   total: 0,
   minCust: 14,
   maxCust: 55,
@@ -166,7 +166,7 @@ southLakeUnion.render();
 
 
 var seaTacAirport = {
-  perHourArray: [''],
+  perHourArray: [],
   total: 0,
   minCust: 14,
   maxCust: 55,
@@ -207,7 +207,7 @@ seaTacAirport.render();
 
 
 var websiteSales = {
-  perHourArray: [''],
+  perHourArray: [],
   total: 0,
   minCust: 14,
   maxCust: 55,
