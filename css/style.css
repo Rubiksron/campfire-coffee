@@ -1,11 +1,41 @@
+
+h2 {
+  background-color: green;
+}
+#navbar {
+  background-color: red;
+}
+#header {
+  /*background-color: lightgreen;*/
+  height: 50px;
+  width: 800px;
+  /*border: 2px solid grey;*/
+  margin: auto;
+  text-align: center;
+}
+#footer {
+  height: 40px;
+  length: 800px;
+  background-color: green;
+  padding: 20px;
+  margin: 10px;
+}
+img {
+  margin: 5px;
+}
+
+   {
+  background-color: blue;
+}
+
 body {
-  background-color: beige;
+  background-color: #609732;
 }
 
 table {
     border-collapse: separate;
-    border-spacing: 5px 5px;
-    border: 1px solid grey;
+    border-spacing: 2px;
+    border: 2px solid grey;
     color: yellow;
     margin: auto;
     background-color: orange;
