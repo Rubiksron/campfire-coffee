@@ -69,9 +69,19 @@ var southLakeUnion = new CoffeeShop(14, 55, 1.2, 'South Lake Union');
 var seaTacAirport = new CoffeeShop(14, 55, 1.2, 'Sea-Tac Airport');
 var websiteSales = new CoffeeShop(14, 55, 1.2, 'Website Sales');
 
-// var submitButton = document.getElementById('user_form');
-// var elTableData = document.getElementById('tableData');
-//
-// function addListeners () {
-// submitButton.addEventListener = this.renderShopRow();
-// }
+var submitButton = document.getElementById('user_form');
+submitButton.addEventListener('submit', addLocation);
+
+function addLocation(e){
+  console.log(e);
+  e.preventDefault();
+
+  var locName = e.target.loc_name.value;
+  var minCust = e.target.minimum_customer.value;
+  var maxCust = e.target.maximum_customer.value;
+  var avgCups = e.target.average_cups.value;
+  var avgLbs = e.target.average_lbs.value;
+
+  var newLocation = new CoffeeShop(+minCust, +maxCust, +avgCups, locName);
+  newLocation.renderShopRow();
+}
