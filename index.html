@@ -1,73 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Vidaloka' rel='stylesheet' type='text/css'>
     <header>
       <section id="header">
         <h2> "Campfire Coffee: From the tent to the fire, it's our coffee you require" </h2>
-        </section>
+      </section>
+    <section id="navbar">
+      <a href="http://www.google.com">Merchandise</a>
+      <a href="http://www.rei.com/?s_kwcid=spTyAtcVF_dc|pcrid|75022685773|pkw|r%20e%20i|pmt|e|google|brand|B&amp;gclid=CK7E2pnoqcoCFYeBfgodQnkIlw">Resources</a>
+      <a href="http://www.google.com">Locations</a>
+      <a href="http://www.google.com">Contact</a>
+    </section>
+  </header>
 
-        <section id="navbar">
-          <a href="http://www.google.com">Merchandise</a>
-          <a href="http://www.rei.com/?s_kwcid=spTyAtcVF_dc|pcrid|75022685773|pkw|r%20e%20i|pmt|e|google|brand|B&amp;gclid=CK7E2pnoqcoCFYeBfgodQnkIlw">Resources</a>
-          <a href="http://www.google.com">Locations</a>
-          <a href="http://www.google.com">Contact</a>
-        </section>
-
-    </header>
     <meta charset="utf-8">
     <title>Campfire Coffee</title>
   </head>
 
-
-
   <body>
+    <form id="user_form">
+      <fieldset>
+        <label for="minimum_customer">Minimum Customer:</label>
+        <input id="minimum_customer" name="minimum_customer" type="text" placeholder="minimum customer">
 
-      <form id="user_form">
-        <fieldset>
-              <label for="minimum_customer">Minimum Customer:</label>
-              <input id="minimum_customer" name="minimum_customer" type="text" placeholder="minimum customer">
+        <label for="maximum_customer">Maximum Customer:</label>
+        <input id="maximum_customer" name="maximum_customer" type="text" placeholder="maximum customer">
 
-              <label for="maximum_customer">Maximum Customer:</label>
-              <input id="maximum_customer" name="maximum_customer" type="text" placeholder="maximum customer">
+        <label for="average_cups">Average Cups:</label>
+        <input id="average_cups" name="average_cups" type="text" placeholder="average cups">
 
-              <label for="average_cups">Average Cups:</label>
-              <input id="average_cups" name="average_cups" type="text" placeholder="average cups">
+        <label for="loc_name">Location Name:</label>
+        <input id="loc_name" name="loc_name" type="text" placeholder="location name">
 
-              <!-- <label for="average_lbs">Average Lbs:</label>
-              <input id="average_lbs" name="average_lbs" type="text" placeholder="average lbs"> -->
+        <button type="submit" name="submit" value="submit" id="submit">Submit</button>
 
-              <label for="loc_name">Location Name:</label>
-              <input id="loc_name" name="loc_name" type="text" placeholder="location name">
-
-              <button type="submit" name="submit" value="submit" id="submit">Submit</button>
-
-              <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
-            </fieldset>
-        </form>
+      </fieldset>
+    </form>
 
     <table id="tableData"></table>
     <section id="data"></section>
 
-  <script src="js/app.js">
-  </script>
+    <script src="js/app.js">
+    </script>
 
+    <section>
+      <h2>History:</h2><p><img src="img/campfire-coffee.jpg" alt="coffee brewing on a campfire" width="250" height="150" align="right"/> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+    </section>
+    <section>
+      <h2>Mission statement:</h2><p><img src="img/campfire-family.jpg" alt="family camping" width="225" height="150" align="left"/>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+    </section>
+    <section>
+      <h2>Why we are better than Starbucks:</h2><p><img src="img/campfire.jpg" alt="campfire" width="250" height="150" align="right"/>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."</p>
+    </section>
+    <section>
+      <h2>Advantages of campfire roasting: </h2><img src="img/campsite-tent-night.jpg" alt="campfire at night" width="300" height="150" align="left"/>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+    </section>
 
-  <section>
-    <h2>History:</h2><p><img src="img/campfire-coffee.jpg" alt="coffee brewing on a campfire" width="200" height="150" align="right"/> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-  </section>
-  <section>
-    <h2>Mission statement:</h2><p><img src="img/campfire-family.jpg" alt="family camping" width="200" height="150" align="left"/>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-  </section>
-  <section>
-    <h2>Why we are better than Starbucks:</h2><p><img src="img/campfire.jpg" alt="campfire" width="200" height="150" align="right"/>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."</p>
-  </section>
-  <section>
-    <h2>Advantages of campfire roasting: </h2><img src="img/campsite-tent-night.jpg" alt="campfire at night" width="200" height="150" align="left"/>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
-  </section>
-
-  <section id="footer">
-    <h2>&copy;Campfire Coffee 2015</h2>
-  </section>
+    <section id="footer">
+      <h2>&copy;Campfire Coffee 2015</h2>
+    </section>
 
   </body>
-</html>
+  </html>

@@ -73,6 +73,7 @@ var southLakeUnion = new CoffeeShop(14, 55, 1.2, 'South Lake Union');
 var seaTacAirport = new CoffeeShop(14, 55, 1.2, 'Sea-Tac Airport');
 var websiteSales = new CoffeeShop(14, 55, 1.2, 'Website Sales');
 
+
 var submitButton = document.getElementById('user_form');
 submitButton.addEventListener('submit', addLocation);
 
