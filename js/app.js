@@ -1,6 +1,8 @@
+'use strict'
+
 var hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00noon', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm,', '9:00pm' ];
 
-var stores = ['pikePlaceMarket', 'capitolHill', 'seattlePublicLibrary', 'southLakeUnion', 'seaTacAirport', 'websiteSales'];
+var stores = [];
 
 function CoffeeShop (minCust, maxCust, avgCups, locName) {
   this.minCust = minCust;
@@ -10,6 +12,8 @@ function CoffeeShop (minCust, maxCust, avgCups, locName) {
   this.perHourArray = [];
   this.total = 0;
   this.renderShopRow();
+  stores.push(this);
+  console.log(this);
 }
 CoffeeShop.prototype.randomCustomer = function(min, max) {
   return Math.floor(Math.random()*((max - min) + 1) + min);
@@ -80,8 +84,8 @@ function addLocation(e){
   var minCust = e.target.minimum_customer.value;
   var maxCust = e.target.maximum_customer.value;
   var avgCups = e.target.average_cups.value;
-  var avgLbs = e.target.average_lbs.value;
+  // var avgLbs = e.target.average_lbs.value;
 
   var newLocation = new CoffeeShop(+minCust, +maxCust, +avgCups, locName);
-  newLocation.renderShopRow();
+  // newLocation.renderShopRow();
 }
