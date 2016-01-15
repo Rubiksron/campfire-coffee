@@ -68,10 +68,3 @@ var seattlePublicLibrary = new CoffeeShop(14, 55, 1.2, 'Seattle Public Library')
 var southLakeUnion = new CoffeeShop(14, 55, 1.2, 'South Lake Union');
 var seaTacAirport = new CoffeeShop(14, 55, 1.2, 'Sea-Tac Airport');
 var websiteSales = new CoffeeShop(14, 55, 1.2, 'Website Sales');
-
-// var submitButton = document.getElementById('user_form');
-// var elTableData = document.getElementById('tableData');
-//
-// function addListeners () {
-// submitButton.addEventListener = this.renderShopRow();
-// }
