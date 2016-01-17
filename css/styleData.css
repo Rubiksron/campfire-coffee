@@ -1,3 +1,46 @@
+
+h1 {
+  background-color: orange;
+  text-align: center;
+
+}
+.container {
+  background-color: lightblue;
+}
+.boxInside {
+  background-color: red;
+}
+.article {
+  justify-content: space-between;
+}
 body {
-  background-color: beige;
+ background: radial-gradient(circle, black, white);}
+
+#table {
+  length: fixed;
+  width: fixed;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 2px;
+    border: 2px solid grey;
+    color: yellow;
+    margin: auto;
+    background-color: orange;
+    width: fixed;
+    length: fixed;
+}
+
+ th, td {
+   border: 1px solid white;
+   text-align: center;
+   padding: 3px;
+}
+
+tr:nth-child(odd) {
+    background-color: red;
+}
+fieldset {
+  background-color: orange;
+  margin: 8px;
 }
