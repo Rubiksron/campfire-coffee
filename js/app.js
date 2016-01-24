@@ -56,6 +56,10 @@ function renderHeaderRow() {
   var thElem = document.createElement('th');
   thElem.textContent = 'total';
   trEl.appendChild(thElem);
+  //added the below three lines to add a new category.
+  var thElement = document.createElement('th');
+  thElement.textContent = 'average Lbs';
+  trEl.appendChild(thElement);
 
 for (var i = 0; i < hours.length; i++) {
   var tdEl = document.createElement('td');
@@ -78,14 +82,13 @@ var submitButton = document.getElementById('user_form');
 submitButton.addEventListener('submit', addLocation);
 
 function addLocation(e){
-  console.log(e);
   e.preventDefault();
 
   var locName = e.target.loc_name.value;
   var minCust = e.target.minimum_customer.value;
   var maxCust = e.target.maximum_customer.value;
   var avgCups = e.target.average_cups.value;
-  // var avgLbs = e.target.average_lbs.value;
+  var avgLbs = e.target.average_lbs.value;
 
   var newLocation = new CoffeeShop(+minCust, +maxCust, +avgCups, locName);
   // newLocation.renderShopRow();
