@@ -111,5 +111,5 @@ function addLocation(e){
   // var avgLbs = e.target.average_lbs.value;
   var locName = e.target.loc_name.value;
 
-  var newLocation = new CoffeeShop(+minCust, +maxCust, +avgCups, locName);
+  var newLocation = new CoffeeShop(+minCust, +maxCust, +avgCups, +avgLbs, locName);
 }
