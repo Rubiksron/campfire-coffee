@@ -1,6 +1,6 @@
-'use strict';
+'use strict'
 
-var hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00noon', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm', '9:00pm'];
+var hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00noon', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm', '9:00pm' ];
 
 function CoffeeShop (minCust, maxCust, avgCups, avgLbs, locName) {
   this.minCust = minCust;
@@ -13,7 +13,7 @@ function CoffeeShop (minCust, maxCust, avgCups, avgLbs, locName) {
   this.perHourLbsArray = [];
   this.perHourLbs = 0;
   this.renderShopRow();
-  console.log(this);
+  stores.push(this);
 }
 CoffeeShop.prototype.randomCustomer = function(min, max) {
   return Math.ceil(Math.random()*((max - min) + 1) + min);
@@ -33,8 +33,6 @@ CoffeeShop.prototype.generateHourly = function() {
 //     this.perHourLbs += coffeeLbs;
 //   }
 // }
-
-
 CoffeeShop.prototype.renderShopRow = function() {
   this.generateHourly();
   var tableDataEl = document.getElementById('tableData');
@@ -46,11 +44,7 @@ CoffeeShop.prototype.renderShopRow = function() {
   var tdElem = document.createElement('td');
   tdElem.textContent = this.total;
   trEl.appendChild(tdElem);
-  //this adds content to Average Lbs
-  // var tdElement = document.createElement('td');
-  // tdElement.textContent = this.perHourLbs;
-  // trEl.appendChild(tdElement);
-  //this adds content to Average Lbs
+
   for (var i = 0; i < this.perHourArray.length; i++) {
 
     var tdEl = document.createElement('td');
@@ -76,17 +70,13 @@ function renderHeaderRow() {
   var thElem = document.createElement('th');
   thElem.textContent = 'Total';
   trEl.appendChild(thElem);
-  //added this Average Lbs row
-  // var thElement = document.createElement('th');
-  // thElement.textContent = 'Average Lbs';
-  // trEl.appendChild(thElement);
-  //ending here
-for (var i = 0; i < hours.length; i++) {
-  var tdEl = document.createElement('td');
-  tdEl.textContent = hours[i];
-  trEl.appendChild(tdEl);
-}
-tableDataEl.appendChild(trEl);
+
+  for (var i = 0; i < hours.length; i++) {
+    var tdEl = document.createElement('td');
+    tdEl.textContent = hours[i];
+    trEl.appendChild(tdEl);
+  }
+  tableDataEl.appendChild(trEl);
 }
 renderHeaderRow();
 
