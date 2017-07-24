@@ -1,49 +1,45 @@
 
 h1 {
-  background-color: orange;
+  background-color: lavender;
   text-align: center;
   font-family: 'Vidaloka', serif;
   width: 700px;
   margin: auto;
 
 }
-.container {
-  background-color: lightblue;
-}
-.boxInside {
-  background-color: red;
-}
-.article {
-  justify-content: space-between;
-}
 body {
- background: radial-gradient(circle, black, white);}
-
-#table {
-  length: fixed;
-  width: fixed;
+ background: radial-gradient(circle, black, white);
 }
+
 table {
-    border-collapse: separate;
-    border-spacing: 2px;
-    border: 2px solid grey;
-    color: yellow;
-    margin: auto;
-    background-color: orange;
-    width: fixed;
-    length: fixed;
+  width: 90%;
+  border-radius: .5em;
+  border: 1em solid grey;
+  color: white;
+  margin: auto;
+  background-color: grey;
+  padding: .5em;
 }
 
  th, td {
+   border-radius: .5em;
    border: 1px solid white;
    text-align: center;
    padding: 3px;
 }
 
 tr:nth-child(odd) {
-    background-color: red;
+  background: black;
 }
+tr:nth-child(even) {
+  color: black;
+  background-color: white;
+}
+
+
 fieldset {
-  background-color: orange;
-  margin: 8px;
+  font-size: 1.5em;
+  background-color: black;
+  color: white;
+  margin: 3em;
 }
