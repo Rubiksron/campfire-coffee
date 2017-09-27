@@ -47,6 +47,7 @@ CoffeeShop.prototype.renderHeaderRow = function() {
 };
 CoffeeShop.prototype.renderHeaderRow();
 
+
 CoffeeShop.prototype.renderShopRow = function() {
   this.generateHourly();
 
@@ -80,7 +81,6 @@ var submitButton = document.getElementById('user_form');
 submitButton.addEventListener('submit', addLocation);
 
 function addLocation(e){
-  console.log(e);
   e.preventDefault();
 
   var locName = e.target.loc_name.value;
@@ -89,4 +89,9 @@ function addLocation(e){
   var avgCups = e.target.average_cups.value;
 
   new CoffeeShop(+minCust, +maxCust, +avgCups, locName);
+
+  e.target.loc_name.value = null;
+  e.target.minimum_customer.value = null;
+  e.target.maximum_customer.value = null;
+  e.target.average_cups.value = null;
 }
