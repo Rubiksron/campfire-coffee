@@ -49,7 +49,6 @@ renderHeaderRow();
 
 
 CoffeeShop.prototype.renderShopRow = function() {
-
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
   tdEl.textContent = this.locName;
@@ -67,9 +66,7 @@ CoffeeShop.prototype.renderShopRow = function() {
   CoffeeShop.tableDataEl.appendChild(trEl);
 };
 
-
 var renderFooterRow = function() {
-
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
   tdEl.textContent = 'Hourly Totals: ';
@@ -85,35 +82,27 @@ var renderFooterRow = function() {
     }
   }
   var tdElem = document.createElement('td');
-  tdElem.textContent = 'hourly total totals';
+  tdElem.textContent = 'Total totals';
   trEl.appendChild(tdElem);
   CoffeeShop.tableDataEl.appendChild(trEl);
 };
 
-
-
-
-//THE FUNCTION BELOW NEEDS TO FINISHED, NEEDS TO RENDER THE SHOP ROWS. HEADER RENDERS FINE.../////////////////////////////////////////////////////
+//THE BELOW FUNCTION STILL NEEDS TO MANIPULATE THE DOM.
 CoffeeShop.removeStore = function(store) {
-  allStores.splice(store, 1);
-  CoffeeShop.tableDataEl.innerHTML = '';
-  CoffeeShop.prototype.renderHeaderRow();
   console.log('allStores before: ', allStores);
-  CoffeeShop.prototype.renderShopRow();
-  CoffeeShop.prototype.renderFooterRow();
-  // console.log('allStores after: ', allStores);
+  allStores.splice(store, 1);
+  console.log('allStores after: ', allStores);
 };
-// CoffeeShop.prototype.removeStore();
-////////////////////////////////////////////////////////////////////////////////////
 
-
-new CoffeeShop(48, 155, 2.2, 'Pike Place Market');
-new CoffeeShop(34, 95, 3.2, 'Capitol Hill');
-new CoffeeShop(12, 55, 2.2, 'Seattle Public Library');
-new CoffeeShop(47, 105, 1.5, 'South Lake Union');
-new CoffeeShop(79, 255, 1.1, 'Sea-Tac Airport');
-new CoffeeShop(13, 55, 1.9, 'Website Sales');
-
+function initExistingShops() {
+  new CoffeeShop(48, 155, 2.2, 'Pike Place Market');
+  new CoffeeShop(34, 95, 3.2, 'Capitol Hill');
+  new CoffeeShop(12, 55, 2.2, 'Seattle Public Library');
+  new CoffeeShop(47, 105, 1.5, 'South Lake Union');
+  new CoffeeShop(79, 255, 1.1, 'Sea-Tac Airport');
+  new CoffeeShop(13, 55, 1.9, 'Website Sales');
+}
+initExistingShops();
 renderFooterRow();
 
 var submitButton = document.getElementById('user_form');
@@ -148,26 +137,25 @@ function addLocation(e){
   if(minCust < 0 || maxCust < 0 || cupsPerCust < 0) {
     return alert('You must enter a positive number!');
   }
-
-// THE BELOW FUNCTION IS TO COMPARE THE ENTRY WITH THE EXISTING STORES AND UPDATE THE EXISTING ROW, IT WORKS SO FAR.
-  // for (var i = 0; i < allStores.length; i++) {
-  //   if(locName === allStores[i].locName) {
-  //     console.log('same name found');
-  //     //use the existing stores name but add the new values to the properties.
-  //     allStores[i].minCust = e.target.minimum_customer.value;
-  //     allStores[i].maxCust = e.target.maximum_customer.value;
-  //     allStores[i].cupsPerCust = e.target.average_cups.value;
-  //     CoffeeShop.tableDataEl.innerHTML = '';
-  //     CoffeeShop.prototype.renderHeaderRow();
-      //THE BELOW FUNCTION CALL RETURNS AN UNDEFINED VALUE OF COFFEE. THIS IS BREAKING EVERYTHING. MY RENDER ROW IS PART OF THE CONSTRUCTOR, IS THAT A PROBLEM?.
-      // CoffeeShop.prototype.renderShopRow();
-    // }
-    // console.log(allStores[i].locName, allStores[i].minCust, allStores[i].maxCust, allStores[i].cupsPerCust);
-  // }
-//////////////////////////////////////////////////////////////////////////////////////////
-
+  //THE BELOW FUNCTION DOES NOT CHANGE THE DOM, AS THERE IS NO LOCAL STORAGE/DB. IT DOES RESET THE VALUES TO THE INPUT VALUES.
+  for (var i = 0; i < allStores.length; i++) {
+    if(locName === allStores[i].locName) {
+      allStores[i].minCust = +e.target.minimum_customer.value;
+      allStores[i].maxCust = +e.target.maximum_customer.value;
+      allStores[i].cupsPerCust = +e.target.average_cups.value;
+      CoffeeShop.tableDataEl.innerHTML = '';
+      renderHeaderRow();
+      initExistingShops();
+      renderFooterRow();
+      return;
+    }
+  }
+  //THE LINE BELOW REMOVES THE PREVIOUS FOOTER BEFORE APPENDING THE NEW STORE'S LINE.
+  tableData.deleteRow(-1);
 
   new CoffeeShop(+minCust, +maxCust, +cupsPerCust, locName);
+
+  renderFooterRow();
 
   e.target.loc_name.value = null;
   e.target.minimum_customer.value = null;
