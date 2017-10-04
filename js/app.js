@@ -3,13 +3,14 @@
 CoffeeShop.hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00noon', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm', '9:00pm' ];
 var allStores = [];
 CoffeeShop.tableDataEl = document.getElementById('tableData');
+var globalAccumulator = 0;
 
 function CoffeeShop (minCust, maxCust, cupsPerCust, locName) {
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.cupsPerCust = cupsPerCust;
-  this.locName = locName;
   this.hourlyCupsTotal = [];
+  this.locName = locName;
   this.dailyCups = 0;
   allStores.push(this);
   this.generateHourlyCoffee();
@@ -25,6 +26,7 @@ CoffeeShop.prototype.generateHourlyCoffee = function() {
     var coffee = Math.ceil(this.cupsPerCust * CoffeeShop.prototype.randomCustomer(this.minCust, this.maxCust));
     this.hourlyCupsTotal.push(coffee);
     this.dailyCups += coffee;
+    globalAccumulator += coffee;
   }
 };
 
@@ -45,8 +47,6 @@ var renderHeaderRow = function() {
   trEl.appendChild(tdElem);
   CoffeeShop.tableDataEl.appendChild(trEl);
 };
-renderHeaderRow();
-
 
 CoffeeShop.prototype.renderShopRow = function() {
   var trEl = document.createElement('tr');
@@ -66,7 +66,7 @@ CoffeeShop.prototype.renderShopRow = function() {
   CoffeeShop.tableDataEl.appendChild(trEl);
 };
 
-var renderFooterRow = function() {
+CoffeeShop.prototype.renderFooterRow = function() {
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
   tdEl.textContent = 'Hourly Totals: ';
@@ -75,14 +75,16 @@ var renderFooterRow = function() {
   for( var i = 0; i < CoffeeShop.hours.length; i++ ) {
     var storesHourlyTotals = 0;
     var td = document.createElement('td');
+
     for( var j = 0; j < allStores.length; j++) {
       storesHourlyTotals += allStores[j].hourlyCupsTotal[i];
       td.textContent = storesHourlyTotals;
       trEl.appendChild(td);
     }
   }
+
   var tdElem = document.createElement('td');
-  tdElem.textContent = 'Total totals';
+  tdElem.textContent = globalAccumulator;
   trEl.appendChild(tdElem);
   CoffeeShop.tableDataEl.appendChild(trEl);
 };
@@ -102,8 +104,9 @@ function initExistingShops() {
   new CoffeeShop(79, 255, 1.1, 'Sea-Tac Airport');
   new CoffeeShop(13, 55, 1.9, 'Website Sales');
 }
+renderHeaderRow();
 initExistingShops();
-renderFooterRow();
+CoffeeShop.prototype.renderFooterRow();
 
 var submitButton = document.getElementById('user_form');
 submitButton.addEventListener('submit', addLocation);
@@ -137,25 +140,31 @@ function addLocation(e){
   if(minCust < 0 || maxCust < 0 || cupsPerCust < 0) {
     return alert('You must enter a positive number!');
   }
-  //THE BELOW FUNCTION DOES NOT CHANGE THE DOM, AS THERE IS NO LOCAL STORAGE/DB. IT DOES RESET THE VALUES TO THE INPUT VALUES.
+  //THE BELOW FUNCTION DOES NOT CHANGE THE DOM, IT DOES RESET THE PROPERTY VALUES TO THE INPUT VALUES.
   for (var i = 0; i < allStores.length; i++) {
     if(locName === allStores[i].locName) {
+      console.log('allStores[i] before:  ', allStores[i]);
       allStores[i].minCust = +e.target.minimum_customer.value;
       allStores[i].maxCust = +e.target.maximum_customer.value;
       allStores[i].cupsPerCust = +e.target.average_cups.value;
+      console.log('allStores[i] after:  ', allStores[i]);
       CoffeeShop.tableDataEl.innerHTML = '';
       renderHeaderRow();
       initExistingShops();
       renderFooterRow();
+      e.target.loc_name.value = null;
+      e.target.minimum_customer.value = null;
+      e.target.maximum_customer.value = null;
+      e.target.average_cups.value = null;
       return;
     }
   }
-  //THE LINE BELOW REMOVES THE PREVIOUS FOOTER BEFORE APPENDING THE NEW STORE'S LINE.
+  //THE LINE BELOW REMOVES THE PREVIOUS FOOTER BEFORE APPENDING THE NEW STORE'S ROW.
   tableData.deleteRow(-1);
 
   new CoffeeShop(+minCust, +maxCust, +cupsPerCust, locName);
 
-  renderFooterRow();
+  CoffeeShop.prototype.renderFooterRow();
 
   e.target.loc_name.value = null;
   e.target.minimum_customer.value = null;
