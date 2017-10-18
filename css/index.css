@@ -1,63 +1,77 @@
-h2 {
-  background-color: green;
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
 body {
-  background-image: url("img/campfire-coffee.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+	line-height: 1;
 }
-#navbar {
-  display: flex;
-  justify-content: space-around;
-  background-color: green;
+ol, ul {
+	list-style: none;
 }
-#header {
-  /*background-color: lightgreen;*/
-  height: fixed;
-  width: fixed;
-  /*border: 2px solid grey;*/
-  margin: auto;
-  text-align: center;
-  font-family: 'Vidaloka', serif;
+blockquote, q {
+	quotes: none;
 }
-#footer {
-  height: fixed;
-  length: fixed;
-  background-color: green;
-  padding: 20px;
-  margin: 10px;
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
 }
-img {
-  margin: 5px;
-}
-
-   {
-  background-color: blue;
-}
-
-body {
-  background-color: #609732;
-}
-
 table {
-    border-collapse: separate;
-    border-spacing: 2px;
-    border: 2px solid grey;
-    color: yellow;
-    margin: auto;
-    background-color: orange;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
+html {
+  background-image: url("../img/campsite-tent-night.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%, 100%;
+}
+body {
+  width: 100%;
 
- th, td {
-   border: 1px solid white;
-   text-align: center;
-   padding: 3px;
 }
-
-tr:nth-child(odd) {
-    background-color: red;
+#menu {
+  display: inline-block;
+  list-style-type: none;
+  font-size: 2em;
+  font-variant: small-caps;
+  /*border: .05em purple solid;*/
+  padding: 1em;
+  background-color: lightblue;
+	cursor: pointer;
 }
-fieldset {
-  background-color: orange;
-  margin: 8px;
+#hamburger_icon {
+  display: inline-block;
+  cursor: pointer;
+}
+.bar {
+  width: 2em;
+  height: .35em;
+  background-color: #333;
+  margin: .35em 0;
 }

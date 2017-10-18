@@ -8,24 +8,22 @@ h1 {
 
 }
 body {
- background: radial-gradient(circle, black, white);
-}
+  background-color: darkgreen;
+ }
 
 table {
   width: 90%;
-  border-radius: .5em;
-  border: 1em solid grey;
+  border: 1em solid whitesmoke;
   color: white;
   margin: auto;
   background-color: grey;
-  padding: .5em;
 }
 
  th, td {
    /*border-radius: .5em;*/
    /*border: 1px solid white;*/
    text-align: center;
-   padding: 3px;
+   padding: .25em;
 }
 
 tr:nth-child(odd) {
