@@ -1,9 +1,9 @@
 'use strict';
 
 CoffeeShop.hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00noon', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm', '9:00pm' ];
-var allStores = [];
+CoffeeShop.allStores = [];
 CoffeeShop.tableDataEl = document.getElementById('tableData');
-var globalAccumulator = 0;
+CoffeeShop.allStoresTotal = 0;
 
 function CoffeeShop (minCust, maxCust, cupsPerCust, locName) {
   this.minCust = minCust;
@@ -12,7 +12,7 @@ function CoffeeShop (minCust, maxCust, cupsPerCust, locName) {
   this.hourlyCupsTotal = [];
   this.locName = locName;
   this.dailyCups = 0;
-  allStores.push(this);
+  CoffeeShop.allStores.push(this);
   this.generateHourlyCoffee();
   this.renderShopRow();
 }
@@ -26,7 +26,7 @@ CoffeeShop.prototype.generateHourlyCoffee = function() {
     var coffee = Math.ceil(this.cupsPerCust * CoffeeShop.prototype.randomCustomer(this.minCust, this.maxCust));
     this.hourlyCupsTotal.push(coffee);
     this.dailyCups += coffee;
-    globalAccumulator += coffee;
+    CoffeeShop.allStoresTotal += coffee;
   }
 };
 
@@ -76,24 +76,24 @@ CoffeeShop.prototype.renderFooterRow = function() {
     var storesHourlyTotals = 0;
     var td = document.createElement('td');
 
-    for( var j = 0; j < allStores.length; j++) {
-      storesHourlyTotals += allStores[j].hourlyCupsTotal[i];
+    for( var j = 0; j < CoffeeShop.allStores.length; j++) {
+      storesHourlyTotals += CoffeeShop.allStores[j].hourlyCupsTotal[i];
       td.textContent = storesHourlyTotals;
       trEl.appendChild(td);
     }
   }
 
   var tdElem = document.createElement('td');
-  tdElem.textContent = globalAccumulator;
+  tdElem.textContent = CoffeeShop.allStoresTotal;
   trEl.appendChild(tdElem);
   CoffeeShop.tableDataEl.appendChild(trEl);
 };
 
 //THE BELOW FUNCTION STILL NEEDS TO MANIPULATE THE DOM.
 CoffeeShop.removeStore = function(store) {
-  console.log('allStores before: ', allStores);
-  allStores.splice(store, 1);
-  console.log('allStores after: ', allStores);
+  console.log('CoffeeShop.allStores before: ', CoffeeShop.allStores);
+  CoffeeShop.allStores.splice(store, 1);
+  console.log('CoffeeShop.allStores after: ', CoffeeShop.allStores);
 };
 
 function initExistingShops() {
@@ -141,13 +141,13 @@ function addLocation(e){
     return alert('You must enter a positive number!');
   }
   //THE BELOW FUNCTION DOES NOT CHANGE THE DOM, IT DOES RESET THE PROPERTY VALUES TO THE INPUT VALUES.
-  for (var i = 0; i < allStores.length; i++) {
-    if(locName === allStores[i].locName) {
-      console.log('allStores[i] before:  ', allStores[i]);
-      allStores[i].minCust = +e.target.minimum_customer.value;
-      allStores[i].maxCust = +e.target.maximum_customer.value;
-      allStores[i].cupsPerCust = +e.target.average_cups.value;
-      console.log('allStores[i] after:  ', allStores[i]);
+  for (var i = 0; i < CoffeeShop.allStores.length; i++) {
+    if(locName === CoffeeShop.allStores[i].locName) {
+      console.log('CoffeeShop.allStores[i] before:  ', CoffeeShop.allStores[i]);
+      CoffeeShop.allStores[i].minCust = +e.target.minimum_customer.value;
+      CoffeeShop.allStores[i].maxCust = +e.target.maximum_customer.value;
+      CoffeeShop.allStores[i].cupsPerCust = +e.target.average_cups.value;
+      console.log('CoffeeShop.allStores[i] after:  ', CoffeeShop.allStores[i]);
       CoffeeShop.tableDataEl.innerHTML = '';
       renderHeaderRow();
       initExistingShops();
