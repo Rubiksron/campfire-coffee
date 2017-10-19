@@ -63,9 +63,6 @@ h1 {
 }
 body {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 table {
@@ -99,17 +96,18 @@ fieldset {
   text-align: center;
 }
 a {
-  font-size: 2em; 
+  font-size: 2em;
+
 }
 #user_form {
   opacity: .85;
 }
 #home_link {
   background-color: gold;
-  margin: .25em;
+  margin: .75em;
   padding: .5em;
   text-align: center;
-  width: 15%;
+  width: 35%;
   border: white .1em solid;
 }
 #submit {
