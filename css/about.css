@@ -63,6 +63,7 @@ h1 {
   color: white;
 }
 #text-div {
+  padding: .5em;
   border: solid .1em white;
   display: flex;
   align-items: center;
