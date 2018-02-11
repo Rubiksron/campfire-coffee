@@ -179,6 +179,6 @@ img {
 }
 @media (min-width: 1024px) {
 	#welcome {
-		font-size: 7em;
+		font-size: 10em;
 	}
 }
