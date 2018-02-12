@@ -103,14 +103,20 @@ a {
   opacity: .85;
 }
 #home_link {
-  background-color: gold;
+  background-color: white;
   margin: .75em;
   padding: .5em;
   text-align: center;
-  width: 35%;
-  border: white .1em solid;
+  width: 25%;
+  border: tan .1em solid;
 }
 #submit {
   background-color: white;
   color: #333;
+}
+
+@media (min-width: 1024px) {
+	#home_link {
+		width: 10%;
+	}
 }
