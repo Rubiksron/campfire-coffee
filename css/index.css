@@ -49,6 +49,8 @@ table {
 
 html {
   background: url("../img/Coffee-Beans-Wallpapers-8.jpg");
+	background-repeat: no-repeat;
+	min-height:100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -61,6 +63,9 @@ body {
 img {
 	max-width: 100%;
 	max-height: 100%;
+}
+a {
+	font-size: 1em;
 }
 #welcomeDiv {
 	display: flex;
@@ -99,6 +104,7 @@ img {
 }
 .nav.expanded {
 	left: 0;
+	width: 40%;
 }
 .nav ul {
   position: absolute;
@@ -172,13 +178,22 @@ img {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
+
 @media (min-width: 411px) {
 	#welcome {
 		margin-top: 4em;
 	}
+	a {
+		font-size: 2em;
+	}
 }
+
 @media (min-width: 1024px) {
 	#welcome {
-		font-size: 10em;
+		font-size: 5em;
+	}
+	.nav.expanded {
+		left: 0;
+		width: 40%;
 	}
 }
