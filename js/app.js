@@ -119,7 +119,7 @@ function addLocation(e){
   var maxCust = e.target.maximum_customer.value;
   var cupsPerCust = e.target.average_cups.value;
 
-  if( !loc_name || !minCust || !maxCust || !cupsPerCust) {
+  if( !locName || !minCust || !maxCust || !cupsPerCust) {
     return alert('Fields cannot be empty!');
   }
   if(isNaN(minCust)) {
@@ -151,7 +151,7 @@ function addLocation(e){
       CoffeeShop.tableDataEl.innerHTML = '';
       renderHeaderRow();
       initExistingShops();
-      renderFooterRow();
+      CoffeeShop.renderFooterRow();
       e.target.loc_name.value = null;
       e.target.minimum_customer.value = null;
       e.target.maximum_customer.value = null;
