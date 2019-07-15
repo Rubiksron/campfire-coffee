@@ -181,10 +181,7 @@ a {
 
 @media (min-width: 411px) {
 	#welcome {
-		margin-top: 4em;
-	}
-	a {
-		font-size: 2em;
+	  margin-top: 4em;
 	}
 }
 
