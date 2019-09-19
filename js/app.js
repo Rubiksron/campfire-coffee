@@ -78,9 +78,9 @@ CoffeeShop.prototype.renderFooterRow = function() {
 
     for( var j = 0; j < CoffeeShop.allStores.length; j++) {
       storesHourlyTotals += CoffeeShop.allStores[j].hourlyCupsTotal[i];
-      td.textContent = storesHourlyTotals;
-      trEl.appendChild(td);
     }
+    td.textContent = storesHourlyTotals;
+    trEl.appendChild(td);
   }
 
   var tdElem = document.createElement('td');
@@ -104,6 +104,7 @@ function initExistingShops() {
   new CoffeeShop(79, 255, 1.1, 'Sea-Tac Airport');
   new CoffeeShop(13, 55, 1.9, 'Website Sales');
 }
+
 renderHeaderRow();
 initExistingShops();
 CoffeeShop.prototype.renderFooterRow();
