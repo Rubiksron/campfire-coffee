@@ -78,9 +78,9 @@ CoffeeShop.prototype.renderFooterRow = function() {
 
     for( var j = 0; j < CoffeeShop.allStores.length; j++) {
       storesHourlyTotals += CoffeeShop.allStores[j].hourlyCupsTotal[i];
-      td.textContent = storesHourlyTotals;
-      trEl.appendChild(td);
     }
+    td.textContent = storesHourlyTotals;
+    trEl.appendChild(td);
   }
 
   var tdElem = document.createElement('td');
